@@ -1,62 +1,58 @@
-
-
-
-
 //Setting up for the flask url
 var url = "data/global_space_launches.json";
 
 //Create a function for creating the dropdown menu - call it so the user can see the menu initially
 function dropdown() {
 
-    //Set a variable to hold an empty array to collect unique country names
+    // Set a variable to hold an empty array to collect unique country names
 
-    // countries = []
+    countries = []
 
-    //****Set variable for mission status array
-    status_mission = []
+    // //****Set variable for mission status array
+    // status_mission = []
 
 
     // set dropdown menu to variable
     var dropdownMenu = d3.select("#selDataset");
     //Reads json data file: "data" encompasses the entire thing
-    // d3.json(url).then((data) => {
+    d3.json(url).then((data) => {
 
-    //     //Loop through the data to create a new array of countries
-    //     data.map(row => {
-    //         var country = row.country
+        //Loop through the data to create a new array of countries
+        data.map(row => {
+            var country = row.country
 
-    //         //If the country isn't already present, push it to the array
-    //         if (!countries.includes(country)) {
-    //             countries.push(country);
-    //         }
-    //     });
-    //     console.log(countries);
+            //If the country isn't already present, push it to the array
+            if (!countries.includes(country)) {
+                countries.push(country);
+            }
+        });
+        console.log(countries);
 
 
     //****Read file and push status to the empty array
      //Reads json data file: "data" encompasses the entire thing
-    d3.json(url).then((data) => {
+    // d3.json(url).then((data) => {
 
-        //Loop through the data to create a new array of status
-        data.map(row => {
-            var status = row.status_mission;
+    //     //Loop through the data to create a new array of status
+    //     data.map(row => {
+    //         var status = row.status_mission;
 
-            //If the status isn't already present, push it to the array
-            if (!status_mission.includes(status)) {
-                status_mission.push(status);
-            }
-        });
-        console.log(status);
+    //         //If the status isn't already present, push it to the array
+    //         if (!status_mission.includes(status)) {
+    //             status_mission.push(status);
+    //         }
+    //     });
+    //     console.log(status);
 
         //Loop through the country names and add to dropdownMenu
-        // countries.forEach(name => {
-        //     dropdownMenu.append("option").text(name).property("value");
-        // });
-      
-        //Loop through the status names and add to dropdownMenu
-           status_mission.forEach(name => {
+        countries.forEach(name => {
             dropdownMenu.append("option").text(name).property("value");
         });
+      
+        //Loop through the status names and add to dropdownMenu
+        //    status_mission.forEach(name => {
+        //     dropdownMenu.append("option").text(name).property("value");
+        // });
 
     });
 };
@@ -77,7 +73,7 @@ d3.json(url).then((data) => {
 
     //Filter main dataset for the selection from the dropdown
         var filter_data = data.filter(item => {
-            return item.status_mission === new_country;
+            return item.country === new_country;
         });
         console.log(filter_data);
 
