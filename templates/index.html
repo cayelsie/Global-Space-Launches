@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Space Launches: 1957 - August 2020</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Country:</h5>
+          <select class="filter" id="country"></select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Mission Status:</h5>
+          <select class="filter" id="status_mission"></select>
+        </div>
+      </div>
+      <button id="filter-btn" type="button" class="btn-primary">Early Space Race Winners</button>
+      <button id="filter-btn2" type="button" class="btn-primary">Recent Space Race Winners</button>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="trendline"></div>
+      </div>
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="early"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="late"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./static/util.js"></script>
+    <script src="./static/app_more.js"></script>
+
+</body>
+
+</html>
