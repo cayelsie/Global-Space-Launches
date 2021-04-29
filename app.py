@@ -23,6 +23,22 @@ connection = engine.connect()
 metadata = db.MetaData()
 launch_data = db.Table('launch_data', metadata, autoload=True, autoload_with=engine)
 
+session = Session(bind = engine)
+
+results = session.query(launch_data).all()
+# Create a dictionary entry for each row of data information
+inspector = inspect(engine)
+columns = inspector.get_columns('launch_data')
+column_names = [column['name'] for column in columns]
+
+final_results = []
+for result in results:
+    my_dict = {}
+    for index, value in enumerate(result):
+        my_dict[column_names[index]] = value
+    final_results.append(my_dict)
+
+session.close()
 
 ##########
 # HOME PAGE 
@@ -45,72 +61,30 @@ def home():
 # launch Data
 @app.route("/api/launch_data")
 def launchdata():
-    session = Session(bind = engine)
-
-    # sel = [
-    #     launch_data.companyname,
-    #     launch_data.location,
-    #     launch_data.center,
-    #     launch_data.lantitude,
-    #     launch_data.longitude,
-    #     launch_data.state,
-    #     launch_data.countryoflaunch,
-    #     launch_data.rocket,
-    #     launch_data.flightnumber,
-    #     launch_data.statusrocket,
-    #     launch_data.rocketcost,
-    #     launch_data.statusmission,
-    #     launch_data.companyscountryoforigin,
-    #     launch_data.privateorstaterun,
-    #     launch_data.launchtimestamp,
-    #     launch_data.launchyear,
-    #     launch_data.launchmonth,
-    #     launch_data.launchday,
-    #     launch_data.launchdate,
-    #     launch_data.launchtime,
-
-    # ]
-
-    results = session.query(launch_data).all()
-    print(results)
-    # Create a dictionary entry for each row of data information
-    inspector = inspect(engine)
-    columns = inspector.get_columns('launch_data')
-    column_names = [column['name'] for column in columns]
-
-    final_results = []
-    for result in results:
-        my_dict = {}
-        for index, value in enumerate(result):
-            my_dict[column_names[index]] = value
-        final_results.append(my_dict)
-    print(final_results)
-    session.close()
-    # print(space_launch_data)
     return jsonify(final_results)
 
 ##########
 # VISUALIZATIONS
 ##########
 @app.route("/graphs.html")
-def build_year_Chart():
+def graphs():
     """Return the graphs page."""
-    return render_template("graphs.html")	
-	
+    return render_template("graphs.html")   
+@app.route("/graphsKelly.html")
+def graphs_kelly():
+    """Return the graphs page."""
+    return render_template("graphs-Kelly.html") 
 @app.route("/maps.html")
 def build_maps():
     """Return the US_OP page."""
-    return render_template("maps.html")	
-	
+    return render_template("maps.html") 
 @app.route("/aboutus.html")
 def aboutus():
     """Return the states_map page."""
-    return render_template("aboutus.html")
-
-@app.route("/data.html")
+    return render_template("aboutUs.html")
+@app.route("/rawdata.html")
 def rawData():
     """Return the states_map page."""
-    return render_template("data.html")		
-
+    return render_template("data.html")     
 if __name__ == "__main__":
     app.run(debug=True)
