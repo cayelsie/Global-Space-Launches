@@ -1,0 +1,300 @@
+
+ ​
+  #map,
+  body,
+  html {
+    height: 100%;
+  }
+
+
+
+
+body {
+    background-color: #0b042e;
+    padding: 0;
+    margin: 0;
+    
+   
+    background-position: absolute; background-size:cover; background-repeat: no-repeat; min-height: 100%;
+
+}
+
+.nav-link {color: white};
+
+.navbar-custom {
+    background-color: #7167a0; 
+    border: 2px solid black;
+    color: white;
+}
+
+.navbar-color {
+    background-color: #0b042e;
+
+    border: solid 1px black;
+    color: white;
+}
+.navbar-light {color: #b3d7ff;}
+
+.hero {
+    position: relative;
+    height: 550px;
+    padding: 20px;
+    margin: 0;
+    background: black;
+    background-image: url("../images/historic_launch.jpg");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+    color: white;
+  }
+
+.team-rocket-color {
+    background-color: #0b042e;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px black;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+.main-img-index {
+    margin-right: 20px;
+}
+
+.row {
+    padding-top: 30px;
+
+}
+
+
+
+.pic-bottom-text {
+    padding-top: 20px;
+   color:white;
+}
+
+#pic-bottom-text {
+    margin-top: 30px;
+    font-size: larger;
+}
+
+
+.navbar-brand {
+    font-weight: 200;
+}
+
+.title-banner-big {
+    background-color: #0b042e;
+
+    border: solid 1px black;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+.title-banner {
+    background-color: #0b042e;
+    border: solid 1px black;
+    color: white;
+    text-align: center;
+}
+
+.image-border {
+    border: solid 1px black;
+    
+}
+
+
+  
+.banner {
+background: gray;
+
+color: black;
+
+}
+
+
+.table-responsive,
+#load_data,
+#rocket_table {color: white; font-size:20px;}
+
+
+.table-responsive {
+    background-color: rgba(127, 128, 141, 0.842);
+    color: white; font-size:20px;
+}
+
+
+/* Point-zoom Container */
+.img-hover-zoom-main img {
+    transform-origin: 65% 75%;
+    transition: transform .75s, filter .5s ease-out;
+    position: relative;
+    z-index: 9999;
+}
+  
+  /* The Transformation */
+  .img-hover-zoom-main:hover img {
+    transform: scale(1.25);
+    position: relative;
+    z-index: 9999;
+}
+
+.img-hover-zoom-main-summary img {
+    transform-origin: 65% 75%;
+    transition: transform .75s, filter .5s ease-out;
+    position: relative;
+    z-index: 9999;
+}
+
+.img-hover-zoom-main-summary:hover img {
+    transform: scale(1.5);
+    position: relative;
+    z-index: 9999;
+}
+
+/* Point-zoom Container */
+.img-hover-zoom img {
+    transform-origin: 65% 75%;
+    transition: transform .75s, filter .5s ease-out;
+    position: relative;
+    z-index: 9999;
+}
+  
+  /* The Transformation */
+  .img-hover-zoom:hover img {
+    transform: scale(1.5);
+    position: relative;
+    z-index: 9999;
+}
+
+@media (max-width: 0px) {
+
+
+}
+
+.navbar-dropdown {
+    border: 1px;
+}
+
+.latitude-color {
+    background-color: #ffbb00;
+   
+    transform: rotate(1440deg);
+    transition: transform 0.5s ease-in-out;
+
+    
+}
+
+.table_body {
+    /* background-color: #e279b3; */
+    background-color: rgb(11, 187, 246);
+}
+
+
+
+.about-me-header {
+    /* Positioning */
+    margin-bottom: 33px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+  
+    /* Typography */
+    font-size: 32px;
+    font-weight: bold;
+    color: #4aaaa5;
+
+  }
+  
+  .about-me-content {
+    /* Box-model */
+    width: 100%;
+    padding: 30px;
+  
+    /* Positioning */
+    margin-top: 32px;
+  
+    /* Visual */
+    background-color: #fff;
+  }
+  
+  .about-me-content > p {
+    /* Box-model */
+    padding-top: 20px;
+    color: black;
+  
+    /* Typography */
+    font-size: 16px;
+    line-height: 30px;
+    color: #bbc;
+  }
+  
+  #nate-image {
+    /* Positioning */
+    float: left;
+  
+    /* Box-model */
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+
+#aboutmePara {
+    color: black;
+}
+  
+
+  
+  #connect-with-me-area {
+    width: 100%;
+  
+    /* Box-model */
+    padding: 30px 30px 43px;
+  
+    /* Positioning */
+    margin-top: 32px;
+  
+    /* Visual */
+    background-color: #fff;
+  }
+  
+  .connect-with-me-header {
+    /* Positioning */
+    margin-bottom: 15px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+  
+    /* Typography */
+    font-size: 25px;
+    font-weight: bold;
+    color: #4aaaa5;
+    /* color: black; */
+  }
+  
+  .connect-with-me-photo {
+    width: 55px;
+  
+    /* Box-model */
+    height: 55px;
+  }
+  
+  #images {
+    /* Box-model */
+    padding-top: 15px;
+  
+    /* Typography */
+    text-align: center;
+  }
+  
+
+  .well {
+    /* background-color: white; */
+    padding-bottom: 30px;
+    border: white solid;
+}
+
+#dropdown {text-align: right;}

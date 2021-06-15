@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-launch_data_df = pd.read_csv('Global Space Launches -seperate columns final2.csv',encoding="ISO-8859-1")
+launch_data_df = pd.read_csv('Global Space Launches -separate columns final2.csv',encoding="ISO-8859-1")
 launch_data_df.head()
 
 url = 'postgresql://postgres:postgres@localhost:5432/gt_project2'
@@ -85,6 +85,10 @@ def aboutus():
 @app.route("/rawdata.html")
 def rawData():
     """Return the states_map page."""
-    return render_template("data.html")     
+    return render_template("data.html")    
+@app.route("/csvdata.html")
+def csvdata():
+    """Return the states_map page."""
+    return render_template("data.html")      
 if __name__ == "__main__":
     app.run(debug=True)

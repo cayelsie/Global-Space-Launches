@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GRAPHS.HTML</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="/static/css/space.css">
+
+  <link rel="stylesheet" href="/static/css/bootstrap-3.3.7/docs/assets/css/src/docs.css">
+  <link rel="stylesheet" href="/static/css/bootstrap-4.3.1-dist/css/bootstrap.css">
+
+  
+</head>
+<body>
+    
+    <!-- Icon  NAVBAR -->
+    <div class="wrapper">
+     
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom" style="color:white; background-color:#0b042e;" >
+        <a class="navbar-brand icon-background-color team-rocket-color" style="color:white;" href="index.html"><strong><img src="../static/images/redBlueRocket.png" alt="Red & Blue Rocket" width="35" height="30" class="d-inline-block align-text-top"><strong>Team Rocket</strong><img src="/static/images/redBlueRocket.png" alt="" width="35" height="30" class="d-inline-block align-text-top"></strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse navbar-color navbar-dropdown" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" style="text-align:right;">
+        <li class="nav-item active">
+            <a class="nav-link" style="color:white;" href="/maps.html"><strong>Maps</strong><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/graphs.html"><strong>Space Launches by Country</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/graphsKelly.html"><strong>Space Race Graphs</strong></a>
+          </li>            
+          <!-- <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/aboutUs.html"><strong>About Us</strong></a>
+          </li>      -->
+          <!-- <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/rawdata.html"><strong>Data</strong></a>
+          </li> -->
+      </ul>
+    </div>
+  </nav>
+  <div class="hero text-center">
+    <h1 data-toggle="tooltip" title="Hover your mouse over the text on the left column or you will be probed.">Rocket Launches From 1957 to 2020</h1>
+    <!-- <p data-toggle="tooltip" title="The truth is that we are only checking your temperature.">The Truth is Out There</p> -->
+  </div> 
+
+
+  <!-- MAIN DIV -->
+ 
+<div class="b4" style="background-color: #0b042e;">  
+  ​
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well" style="color:white;">
+          <h5>Country:</h5>
+          <select class="filter" id="companyscountryoforigin"></select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="well" style="color:white;">
+          <h5>Mission Status:</h5>
+          <select class="filter" id="statusmission"></select>
+        </div>
+      </div>
+      <button id="filter-btn" type="button" style="border:15px solid #0b042e; font-family:helvetica; font-size:20px;" class="btn-light col-md-2"><strong>Early Space Race Winners</strong></button>
+      <button id="filter-btn2" type="button" style="border:15px solid #0b042e; font-family:helvetica; font-size: 20px" class="btn-light col-md-2"><strong>Recent Space Race Winners</strong></button>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="trendline"></div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row" padding-left="0">
+        <div class="col-md-6">
+          <div id="early"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="late"></div>
+        </div>
+      </div>
+    </div>
+​
+<!-- .b3 end -->
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/app_more.js"></script>
+    <script src="{{ url_for('static', filename='js/logic_sy.js') }}"></script>
+    
+
+
+</body>
+</html>

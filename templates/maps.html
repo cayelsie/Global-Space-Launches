@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MAPS.HTML</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />  
+  <link rel="stylesheet" href="/static/css/space.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <style>
+   
+    body,
+    html {
+      height: 100%;
+    } 
+    #map {
+      width: 100%;
+      height: 600%;
+    }
+  </style>
+
+</head>
+<body>
+    
+    <!-- Icon  NAVBAR -->
+    <div class="wrapper">
+     
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom" style="color: white;">
+        <a class="navbar-brand icon-background-color team-rocket-color" style="color:white;" href="index.html"><strong><img src="../static/images/redBlueRocket.png" alt="Red & Blue Rocket" width="35" height="30" class="d-inline-block align-text-top"><strong>Team Rocket</strong><img src="/static/images/redBlueRocket.png" alt="" width="35" height="30" class="d-inline-block align-text-top"></strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse navbar-color navbar-dropdown" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item active">
+            <a class="nav-link" style="color:white;" href="/maps.html"><strong>Maps</strong><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/graphs.html"><strong>Space Launches by Country</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/graphs-Kelly.html"><strong>Space Race Graphs</strong></a>
+          </li>           
+          <!-- <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/aboutUs.html"><strong>About Us</strong></a>
+          </li>      -->
+          <!-- <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/rawdata.html"><strong>Data</strong></a>
+          </li> -->
+      </ul>
+    </div>
+  </nav>
+  <div class="hero text-center">
+    <h1 data-toggle="tooltip" title="....">Rocket Launches From 1957 to 2020</h1>
+    <h4 data-toggle="tooltip" title="...">“Where lies the land to which yon ship must go?” William Wordsworth</h4>
+  </div> 
+
+
+  <!-- MAIN DIV -->
+  <div class="container">
+    <div class="row">  
+      <!-- left div -->
+      <div class="col-md-12">
+        <div class="text-left">
+          <div class="title-banner-big">
+            <h3><strong>Maps of Launching Sites</strong></h3>
+          </div>
+        </div>
+        <hr>
+
+        <!---------------------- MAIN SECTION LEFT --------------------------------->
+        <div id="map">
+        </div>
+
+  
+
+      </div>
+      <!-------------------------------- right div ------------------------------>
+      <!-- <div class="col-md-3">
+        <div class="text-left">
+          <div class="title-banner">
+            <div class="title-banner-big">
+              <h4><strong>Maps and Graphs</strong></h4>
+            </div>
+          </div>
+        </div>
+        <hr> -->
+
+
+
+        
+        <!-- <div class="row">
+          <div class="col-xs-3 col-sm-3 col-md-12">           -->
+            <!-- <a href="../static/images/redBlueRocket.png"><img src="../static/images/mapIcon.png" alt="Maps" class="imageNav-photo img-thumbnail"></a> -->
+            <!-- <div class="img-hover-zoom">
+              <div class="title-banner">
+                <h5><strong>Maps</strong></h5>
+              </div>
+            <a href="/templates/maps.html"><img src="/static/images/trifoldMap.png" alt="Maps" class="imageNav-photo img-thumbnail img-fluid" width="300" height="175"></a>
+            </div>
+          </div> -->
+  
+          <!-- <div class="col-xs-3 col-sm-3 col-md-12"> -->
+            <!-- Humidity -->
+            <!-- <div class="img-hover-zoom">
+              <div class="title-banner">
+                <h5><strong>Graphs</strong></h5>
+              </div>
+            <a href="/templates/graphs.html"><img src="../static/images/graphIcon.png" alt="Graphs" class="imageNav-photo img-thumbnail img-fluid" width="300" height="175"></a>
+            </div>
+          </div>
+          </div> -->
+  
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+<!----------------------- AUDIO ------------------------>
+<!-- <embed src="space_shuttle.mp3" loop="true" autostart="true" width="2" height="0"> -->
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- API key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+  <script type="text/javascript" src="static/js/util.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/logic_sy.js') }}"></script>
+
+
+<!-------------------- Footer --------------------->
+<!-- <div class="footer" id="footer:small">
+  <p>&copy 2021 Team Rocket</p>
+</div> -->
+
+</body>
+</html>

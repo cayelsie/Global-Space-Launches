@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DATA.HTML</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="reset.css"> -->
+  <link rel="stylesheet" href="/static/css/space.css">
+  <link rel="stylesheet" href="/static/css/bootstrap-3.3.7/docs/assets/css/src/docs.css">
+
+  <!-- link to csv data file -->
+  <link rel="text/stylesheet" href="/GlobalSpaceLaunches-seperatecolumnsfinal2.csv">
+  <!-- jquery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+    
+    <!-- Icon  NAVBAR -->
+    <div class="wrapper">
+     
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom" style="color: white;">
+        <a class="navbar-brand icon-background-color team-rocket-color" style="color:white;" href="index.html"><strong><img src="../static/images/redBlueRocket.png" alt="Red & Blue Rocket" width="35" height="30" class="d-inline-block align-text-top"><strong>Team Rocket</strong><img src="/static/images/redBlueRocket.png" alt="" width="35" height="30" class="d-inline-block align-text-top"></strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse navbar-color navbar-dropdown" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+
+        <li class="nav-item active">
+            <a class="nav-link" style="color:white;" href="/maps.html"><strong>Maps</strong><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/graphs.html"><strong>Space Launches by Country</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/graphs-Kelly.html"><strong>Space Race Graphs</strong></a>
+          </li> 
+          <!-- <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/aboutUs.html"><strong>About Us</strong></a>
+          </li>      -->
+          <li class="nav-item">
+            <a class="nav-link"  style="color:white;" href="/rawdata.html"><strong>Data</strong></a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="hero text-center">
+    <h1 data-toggle="tooltip" title="Hover your mouse over the text on the left column or you will be probed.">Rocket Launches From 1957 to 2020</h1>
+    <!-- <p data-toggle="tooltip" title="The truth is that we are only checking your temperature.">The Truth is Out There</p> -->
+  </div> 
+
+
+  <!-- MAIN DIV -->
+  <div class="container">
+    <div class="row">  
+      <!-- left div -->
+      <div class="col-md-12">
+        <div class="text-left">
+          <!-- <div class="title-banner-big"> -->
+
+            <div class="container">
+                <div class="row">  
+                <!-- left div -->
+                <div class="col-md-12">
+                    <div class="text-left">
+                    <div class="title-banner-big">
+                        <!-- <h3><strong>DATA</strong></h3> -->
+                                            
+                        <div class="container">
+                            <div class="table-responsive">
+                            <h1 align="center">CSV File to HTML Table Using AJAX jQuery</h1>
+                            <br />
+                            <div align="center">
+                            <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+                            </div>
+                            <br />
+                            <div id="rocket_table" style="color:white;">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <hr>
+
+
+
+            </div>
+
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+<!----------------------- AUDIO ------------------------>
+<!-- <embed src="space_shuttle.mp3" loop="true" autostart="true" width="2" height="0"> -->
+
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+
+<!-------------------- Footer --------------------->
+<!-- <div class="footer" id="footer:small">
+  <p>&copy 2021 Team Rocket</p>
+</div> -->
+
+</body>
+</html>
+
+
+
+
+<script>
+  $(document).ready(function(){
+   $('#load_data').click(function(){
+    $.ajax({
+     url:"GlobalSpaceLaunches-seperatecolumnsfinal2.csv",
+     dataType:"text",
+     success:function(data)
+     {
+      var rocket_data = data.split(/\r?\n|\r/);
+      var table_data = '<table class="table table-bordered table-striped">';
+      for(var count = 0; count<rocket_data.length; count++)
+      {
+       var cell_data = rocket_data[count].split(",");
+       table_data += '<tr>';
+       for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+       {
+        if(count === 0)
+        {
+         table_data += '<th>'+cell_data[cell_count]+'</th>';
+        }
+        else
+        {
+         table_data += '<td>'+cell_data[cell_count]+'</td>';
+        }
+       }
+       table_data += '</tr>';
+      }
+      table_data += '</table>';
+      $('#rocket_table').html(table_data);
+     }
+    });
+   });
+   
+  });
+  </script>
+
+  
