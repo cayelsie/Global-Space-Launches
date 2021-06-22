@@ -11,9 +11,16 @@ The visualization 1 page uses Plotly to display two interactive charts. The firs
 ![](static/images/vis1.png)
 The second chart is a bar graph displaying all of the company names (both state and private) that funded the launches. This graph is also filtered by the dropdown menu that allows the selection of a country of interest. 
 
+![](additional_images/companies.png)
+
 The visualization 2 page uses Plotly to display several interactive charts. The first chart contains two trendlines: one for privately funded launches and one for state-funded launches. Total launches for each year are shown across the years from 1957 to 2020. This chart can be filtered by two dropdown menus: one allows the user to select a country of interest and one allows the user to select whether the missions were successful or failures.
 
 ![](static/images/vis2.png)
-Additionally, there are two buttons next to the dropdown menus. Upon clicking the first button, a bar graph will appear that displays the top countries leading the space race between 1960-1980. Upon clicking the second button, a second bar graph will appear that displays the countries leading the space race from 2010-2020.
+Additionally, there are two buttons next to the dropdown menus. Upon clicking the first button, a bar graph will appear that displays the top countries leading the space race between 1960-1980.
+
+![](additional_images/early.png)
+Upon clicking the second button, a second bar graph will appear that displays the countries leading the space race from 2010-2020.
+
+![](additional_images/recent.png)
 
  
